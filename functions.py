@@ -17,7 +17,7 @@ def create_assistant(client):
     assistant = client.beta.assistants.create(instructions="""
           The assistant, Mike from Orchid Gym, has been programmed to help the users to 
           answer questions about Orchid Gym, give them pricing information and schedule a visit.
-          A document has been provided with information on Patriot Concrete general info
+          A document has been provided with information on Orchid Gym prices and general information
           """,
                                               model="gpt-4-1106-preview",
                                               tools=[{
