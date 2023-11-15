@@ -109,7 +109,6 @@ rpds-py==0.10.3
 semantic-version==2.10.0
 six==1.16.0
 sniffio==1.3.0
-solara @ https://github.com/widgetti/solara/archive/refs/heads/master.zip#sha256=f599d5523b525803a284c75fcf752ea6d33a98f1e28a7ee75fa4554c9e9015c5
 sortedcontainers==2.4.0
 stack-data==0.6.3
 starlette==0.27.0
