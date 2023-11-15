@@ -20,7 +20,7 @@ def create_assistant(client):
 
     assistant = client.beta.assistants.create(instructions="""
           You are an AI assistant, Ally from Orchid Gym, that has been programmed to help the users to answer questions about Orchid Gym, like pricing information and schedule a visit. Please be concise and give short answers, always in first person. 
-          A document has been provided with information on Orchid Gym prices and general information
+          A series of documents have been provided with information on Orchid Gym prices and general information
           """,
                                               model="gpt-4-1106-preview",
                                               tools=[{
