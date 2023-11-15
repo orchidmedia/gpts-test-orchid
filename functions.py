@@ -14,7 +14,7 @@ def create_assistant(client):
   else:
     files_upload=[]
     for file in files:
-      file_result = client.files.create(file=open(file, "rb"),
+      file_result = client.files.create(file=open(f"./models/{file}", "rb"),
                                purpose='assistants')
       files_upload.append(file_result.id)
 
