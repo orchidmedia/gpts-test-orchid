@@ -31,7 +31,7 @@ def create_assistant(client):
 
     with open(assistant_file_path, 'w') as file:
       json.dump({'assistant_id': assistant.id}, file)
-      print("Created a new assistant and saved the ID.")
+      print("Created a new assistant and saved the ID: {assistant_id}")
 
     assistant_id = assistant.id
 
