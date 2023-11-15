@@ -35,8 +35,6 @@ fonttools==4.42.1
 frozenlist==1.4.0
 fsspec==2023.9.0
 google-search-results==2.4.2
-gradio==3.44.1
-gradio_client==0.5.0
 h11==0.14.0
 httpcore==1.0.1
 httptools==0.6.1
