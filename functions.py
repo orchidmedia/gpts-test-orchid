@@ -1,6 +1,7 @@
 import json
 import os
 
+files=["knowledge.docx","prices.docx"]
 
 def create_assistant(client):
   assistant_file_path = 'assistant.json'
@@ -11,18 +12,22 @@ def create_assistant(client):
       assistant_id = assistant_data['assistant_id']
       print("Loaded existing assistant ID.")
   else:
-    file = client.files.create(file=open("knowledge.docx", "rb"),
+    files_upload=[]
+    for file in files:
+      file_result = client.files.create(file=open(file, "rb"),
                                purpose='assistants')
+      files_upload.append(file_result.id)
 
     assistant = client.beta.assistants.create(instructions="""
-          You are an AI assistant, Ally from Orchid Gym, that has been programmed to help the users            to answer questions about Orchid Gym, like pricing information and schedule a visit.                 Please be concise and give short answers, always in first person. 
+          You are an AI assistant, Ally from Orchid Gym, that has been programmed to help the users to answer questions about Orchid Gym, like pricing information and schedule a visit. Please be concise and give short answers, always in first person. 
           A document has been provided with information on Orchid Gym prices and general information
           """,
                                               model="gpt-4-1106-preview",
                                               tools=[{
                                                   "type": "retrieval"
                                               }],
-                                              file_ids=[file.id])
+                                              name="Gym Orchid",
+                                              file_ids=files_upload)
 
     with open(assistant_file_path, 'w') as file:
       json.dump({'assistant_id': assistant.id}, file)
