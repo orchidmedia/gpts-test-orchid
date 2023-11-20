@@ -26,7 +26,7 @@ def create_assistant(client):
                                               tools=[{
                                                   "type": "retrieval"
                                               }],
-                                              name="Orchid Gym",
+                                              name="Ally from Orchid Gym",
                                               file_ids=files_upload)
 
     with open(assistant_file_path, 'w') as file:
