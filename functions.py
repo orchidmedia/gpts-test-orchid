@@ -1,7 +1,7 @@
 import json
 import os
 
-files=["knowledge.docx","prices.docx"]
+files=["knowledge.docx","membership.docx","policies.docx","facilities.docx","faq.docx","equipment.docx","refreshments.docx","menu.docx","cancellation.docx","schedule.docx","services.docx"]
 
 def create_assistant(client):
   assistant_file_path = 'assistant.json'
@@ -20,13 +20,13 @@ def create_assistant(client):
 
     assistant = client.beta.assistants.create(instructions="""
           You are an AI assistant, Ally from Orchid Gym, that has been programmed to help the users to answer questions about Orchid Gym, like pricing information and schedule a visit. Please be concise and give short answers, always in first person. 
-          A series of documents have been provided with information on Orchid Gym prices and general information
+          A series of documents have been provided with information on Orchid Gym prices and general information. Please review each document before submitting an answer.
           """,
                                               model="gpt-4-1106-preview",
                                               tools=[{
                                                   "type": "retrieval"
                                               }],
-                                              name="Gym Orchid MVP",
+                                              name="Orchid Gym",
                                               file_ids=files_upload)
 
     with open(assistant_file_path, 'w') as file:
