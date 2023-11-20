@@ -1,7 +1,7 @@
 import json
 import os
 
-files=["knowledge.docx","membership.docx","policies.docx","facilities.docx","faq.docx","equipment.docx","refreshments.docx","menu.docx","cancellation.docx","schedule.docx","services.docx"]
+files=["knowledge.txt","membership.txt","policies.txt","facilities.txt","faq.txt","equipment.txt","refreshments.txt","menu.txt","cancellation.txt","schedule.txt","services.txt"]
 
 def create_assistant(client):
   assistant_file_path = 'assistant.json'
